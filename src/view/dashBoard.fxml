@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.chart.AreaChart?>
+<?import javafx.scene.chart.BarChart?>
+<?import javafx.scene.chart.CategoryAxis?>
+<?import javafx.scene.chart.LineChart?>
+<?import javafx.scene.chart.NumberAxis?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+
+<VBox prefHeight="538.0" prefWidth="684.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="DashBoardController">
+  <children>
+    <AnchorPane maxHeight="-1.0" maxWidth="-1.0" prefHeight="439.0" prefWidth="640.0" VBox.vgrow="ALWAYS">
+      <children>
+            <LineChart fx:id="lineChartTemperature" animated="false" createSymbols="false" layoutX="27.0" layoutY="14.0" prefHeight="260.0" prefWidth="320.0" title="Evolution température terrestre">
+              <xAxis>
+                <CategoryAxis label="Temps (années)" side="BOTTOM" />
+              </xAxis>
+              <yAxis>
+                <NumberAxis label="Température (°C)" side="LEFT" />
+              </yAxis>
+            </LineChart>
+            <LineChart fx:id="lineChartTaille" createSymbols="false" layoutX="361.0" layoutY="14.0" legendVisible="false" prefHeight="260.0" prefWidth="320.0" title="Evolution taille glaciers">
+              <xAxis>
+                <CategoryAxis label="Temps (années)" side="BOTTOM" />
+              </xAxis>
+              <yAxis>
+                <NumberAxis label="Taille (cm)" side="LEFT" />
+              </yAxis>
+            </LineChart>
+            <BarChart fx:id="barChartTemperatureMoyenne" layoutX="27.0" layoutY="289.0" prefHeight="194.0" prefWidth="386.0" title="moyenne température terrestre">
+              <xAxis>
+                <CategoryAxis side="BOTTOM" />
+              </xAxis>
+              <yAxis>
+                <NumberAxis side="LEFT" />
+              </yAxis>
+            </BarChart>
+            <AnchorPane layoutX="433.0" layoutY="289.0" prefHeight="200.0" prefWidth="200.0">
+               <children>
+                  <Label layoutX="71.0" layoutY="14.0" text="Filtre">
+                     <font>
+                        <Font size="26.0" />
+                     </font>
+                  </Label>
+                  <TableView layoutY="59.0" prefHeight="120.0" prefWidth="200.0">
+                    <columns>
+                      <TableColumn prefWidth="134.00003051757812" text="Intitut" />
+                      <TableColumn prefWidth="66.0" text="Actif" />
+                    </columns>
+                  </TableView>
+               </children>
+            </AnchorPane>
+      </children>
+    </AnchorPane>
+  </children>
+</VBox>
