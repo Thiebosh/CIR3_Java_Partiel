@@ -7,15 +7,15 @@ import javafx.scene.chart.AreaChart;
 import javafx.scene.chart.BarChart;
 import javafx.scene.chart.LineChart;
 import javafx.scene.chart.XYChart;
-import javafx.util.Pair;
 
 import java.net.URL;
 import java.text.SimpleDateFormat;
-import java.util.ArrayList;
-import java.util.Date;
 import java.util.HashMap;
 import java.util.ResourceBundle;
 
+/**
+ * Controlleur de la vue
+ */
 public class DashBoardController implements Initializable {
     @FXML
     private LineChart lineChartTemperature;
@@ -26,7 +26,11 @@ public class DashBoardController implements Initializable {
     @FXML
     private BarChart barChartTemperatureMoyenne;
 
-
+    /**
+     * fonction d'initalisation de la fenêtre : remplissage initial
+     * @param url
+     * @param resourceBundle
+     */
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
         displayTemperatureGraph();
@@ -35,6 +39,9 @@ public class DashBoardController implements Initializable {
 
     }
 
+    /**
+     * fonction de remplissage initial du graphe température
+     */
     private void displayTemperatureGraph() {
         LineChart.Series<String, Number> serieGCAG = new LineChart.Series<>();
         serieGCAG.setName("GCAG");
@@ -61,6 +68,9 @@ public class DashBoardController implements Initializable {
         serieGISTEMP.getNode().lookup(".chart-series-line").setStyle("-fx-stroke: rgba(0,0,255, 0.4)");
     }
 
+    /**
+     * fonction de remplissage initial du graphe taille
+     */
     private void displayTailleGraph() {
         LineChart.Series<String, Number> serie = new AreaChart.Series<>();
 
@@ -71,6 +81,9 @@ public class DashBoardController implements Initializable {
         lineChartTaille.setData(FXCollections.observableArrayList(serie));
     }
 
+    /**
+     * fonction de remplissage initial du graphe de la moyenne
+     */
     private void displayMoyenneTempGraph() {
         HashMap<String, Double> moyenne = new HashMap();
         for (Temperature current : Launcher.getDataTemperature()) {

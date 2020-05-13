@@ -7,13 +7,20 @@ import java.io.File;
 import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.Collections;
-import java.util.Date;
 import java.util.Scanner;
 
+/**
+ * classe de lancement : acquisition des données et lancement de la fenêtre
+ */
 public class Launcher extends Application {
     private static ArrayList<Glacier> dataGlaciers = new ArrayList<>();
     private static ArrayList<Temperature> dataTemperature = new ArrayList<>();
 
+    /**
+     * Fonction de lancement de la fenêtre
+     * @param primaryStage fenêtre initiale
+     * @throws Exception lecture fichier
+     */
     @Override
     public final void start(final Stage primaryStage) throws Exception {
         //get glaciers.txt content
@@ -59,10 +66,18 @@ public class Launcher extends Application {
         launch(args);
     }
 
+    /**
+     * getter de la liste des glaciers
+     * @return liste d'instances de glaciers
+     */
     public static ArrayList<Glacier> getDataGlaciers() {
         return dataGlaciers;
     }
 
+    /**
+     * getter de la liste des températures
+     * @return liste d'instances de températures
+     */
     public static ArrayList<Temperature> getDataTemperature() {
         return dataTemperature;
     }

@@ -2,10 +2,18 @@ package entity;
 
 import java.util.Date;
 
+/**
+ * entitée fenêtre
+ */
 public class Glacier implements Comparable {
     private Date year;
     private Double deltaMass;
 
+    /**
+     * constructeur
+     * @param year
+     * @param deltaMass
+     */
     public Glacier(Date year, Double deltaMass) {
         this.year = year;
         this.deltaMass = deltaMass;

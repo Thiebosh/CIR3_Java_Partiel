@@ -2,11 +2,20 @@ package entity;
 
 import java.util.Date;
 
+/**
+ * entitée température
+ */
 public class Temperature implements Comparable {
     private String source;
     private Date dateMesure;
     private Double tempMoyenne;
 
+    /**
+     * constructeur
+     * @param source
+     * @param dateMesure
+     * @param tempMoyenne
+     */
     public Temperature(String source, Date dateMesure, Double tempMoyenne) {
         this.source = source;
         this.dateMesure = dateMesure;
